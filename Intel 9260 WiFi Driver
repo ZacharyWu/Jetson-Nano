@@ -1,0 +1,20 @@
+Install the latest Image (with the PATCH included in latest r32.2.0 release)
+https://developer.download.nvidia.com/assets/embedded/downloads/jetson-nano-sd-card-image/r32.2-2019-07-17/jetson-nano-sd-r32.2-2019-07-16.zip
+
+# Clone and build and install the iwlwifi backport 
+git clone https://git.kernel.org/pub/scm/linux/kernel/git/iwlwifi/backport-iwlwifi.git
+cd backport-iwlwifi
+make defconfig-iwlwifi-public
+make -j4
+sudo make install
+
+# Clone the linux-firmware git repo: 
+git clone git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
+
+# Copy all iwlwifi-9260* from the linux-firmware repo to /lib/firmware
+sudo cp linux-firmware/iwlwifi-9260* /lib/firmware/
+sudo reboot
+
+
+Reference: 
+https://devtalk.nvidia.com/default/topic/1050449/jetson-nano/intel-9260-wifi-on-jetson-nano-jetbot/6
