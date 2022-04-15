@@ -1,10 +1,12 @@
 Intel 9260 WIFI and Bluetooth working on Jetson Nano by doing the following:
 
+# This is for the new version # maybe >= Jetpack4.5
+
 1.Get the latest version of Jetpack and fresh image on your nano
 
 2.Clone and build and install the iwlwifi backport:
 cd ~
-git clone https://git.kernel.org/pub/scm/linux/kernel/git/iwlwifi/backport-iwlwifi.git 12
+git clone https://git.kernel.org/pub/scm/linux/kernel/git/iwlwifi/backport-iwlwifi.git
 cd backport-iwlwifi
 make defconfig-iwlwifi-public
 sed -i ‘s/CPTCFG_IWLMVM_VENDOR_CMDS=y/# CPTCFG_IWLMVM_VENDOR_CMDS is not set/’ .config
@@ -20,6 +22,6 @@ sudo cp iwlwifi-9260* /lib/firmware
 
 sudo reboot
 
-3.Install BTUSB from https://github.com/yoffy/jetson-nano-kernel/blob/master/install-btusb.sh 41
+3.Install BTUSB from https://github.com/yoffy/jetson-nano-kernel/blob/master/install-btusb.sh
 
 Reboot and you should have both WIFI and Bluetooth working.
