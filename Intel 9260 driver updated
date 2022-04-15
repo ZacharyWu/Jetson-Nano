@@ -1,6 +1,6 @@
 Intel 9260 WIFI and Bluetooth working on Jetson Nano by doing the following:
 
-# This is for the new version # maybe >= Jetpack4.5
+# This is only for the new version # maybe >= Jetpack4.5
 
 1.Get the latest version of Jetpack and fresh image on your nano
 
